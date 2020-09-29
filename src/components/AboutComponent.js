@@ -4,6 +4,7 @@ class About extends Component {
     render() {
         return (
             <div className="container">
+                <img src="assets/images/background.jpg" alt="placeholder" width="400" height="500" />
                 <div className="row">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna 

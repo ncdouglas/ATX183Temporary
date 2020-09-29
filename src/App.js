@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand, Card, Button } from 'reactstrap';
+import Header from './components/HeaderComponent';
+import About from './components/AboutComponent';
+import Contact from './components/ContactComponent';
+import Footer from './components/FooterComponent';
 import './App.css';
 
 class App extends Component {
   render() {
       return (
           <div className="App">
-              <Navbar dark color="primary">
-              <div className="container">
-                  <NavbarBrand href="/">Maximizing Hope</NavbarBrand>
-              </div>
-              </Navbar>
+              <Header />
+              <Card>
+                <About />
+              </Card>
+              <Card>
+                <Contact />
+              </Card>
+              <Footer />
           </div>
       );
   }
