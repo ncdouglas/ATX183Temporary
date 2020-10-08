@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+
+.navbrand {
+    font-family: 'Special Elite', cursive;
+    color:#039da59a;
+    font-size: 30px !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.site-footer {
+    font-family: 'Merriweather', serif;
+    background-color:#a1a3a7;
+    color:#ffc107;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dbutton {
+    font-family: 'Merriweather', serif;
+    display: flex;
+    position: absolute;
+    right: 25%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.abutton {
+    font-family: 'Merriweather', serif;
+    display: flex;
+    position: absolute;
+    right: 6%;
 }
 
-.App-link {
-  color: #61dafb;
+.image-div { 
+    Display: flex;
+    Height: 100vh;
+    Width: 100vw; 
+    Align-Items: center;
+    Justify-Content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-div {
+    text-align: center;
+}
+
+.form {
+    padding: 10%;
 }
