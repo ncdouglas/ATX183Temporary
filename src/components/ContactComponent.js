@@ -1,95 +1,73 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, Input, Row, Col, Label } from 'reactstrap';
+import { Form, FormGroup, Input, Label, Button} from 'reactstrap';
 import axios from 'axios';
 
 class Contact extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        name: '',
-        email: '',
-        message: ''
-      }
+
+  constructor() {
+    super()
+    this.state = {
+      name: '',
+      email: '',
+      message: '',
     }
 
-    handleSubmit(e){
-        e.preventDefault();
-    
-        axios({
-          method: "POST", 
-          url:"http://localhost:3002/send", 
-          data:  this.state
-        }).then((response)=>{
-          if (response.data.status === 'success'){
-            alert("Message Sent."); 
-            this.resetForm()
-          }else if(response.data.status === 'fail'){
-            alert("Message failed to send.")
-          }
-        })
-      }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 
-      resetForm(){
-    
-        this.setState({name: '', email: '', message: ''})
-     }
-  
-  render() {
-   return(
-     <div>
-     <Form className="form">
-     <h1 style={{fontFamily: 'Special Elite, cursive'}}>Contact Us</h1>
-        <FormGroup row>
-          <Label for="name" sm={1} style={{fontFamily: 'Merriweather, serif'}}>Name:</Label>
-          <Col sm={10}>
-            <Input type="text" name="name" id="name" placeholder="enter your name" />
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="email" sm={1} style={{fontFamily: 'Merriweather, serif'}}>Email:</Label>
-          <Col sm={10}>
-            <Input type="email" name="email" id="email" placeholder="myemail@here.co" />
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="message" style={{fontFamily: 'Merriweather, serif'}}>Message:</Label>
-          <Col sm={10}>
-            <Input type="textarea" name="messge" id="message" placeholder="write us a message" />
-          </Col>
-        </FormGroup>
-     </Form>
-     </div>
-    //  <div className="Contact">
-    //  <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-    //   <div className="form-group">
-    //       <label htmlFor="name">Name:</label>
-    //       <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-    //   </div>
-    //   <div className="form-group">
-    //       <label htmlFor="exampleInputEmail1">Email address:</label>
-    //       <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-    //   </div>
-    //   <div className="form-group">
-    //       <label htmlFor="message">Message:</label>
-    //       <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-    //   </div>
-    //   <button type="submit" className="btn btn-primary">Submit</button>
-    //   </form>
-    //   </div>
-   );
+  }
+
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value})
   }
   
-    onNameChange(event) {
-      this.setState({name: event.target.value})
-    }
+  async handleSubmit(e) {
+    e.preventDefault()
 
-    onEmailChange(event) {
-        this.setState({email: event.target.value})
-      }
-    
-    onMessageChange(event) {
-        this.setState({message: event.target.value})
-      }
-    }
-    
+    const {name, email, message} = this.state
+
+    const form = await axios.post('https://mailthis.to/hello@maximizinghope.com', {
+      name, 
+      email,
+      message
+    })
+  }
+
+  render() {
+    return(
+      <div>
+      <Form onSubmit={this.handleSubmit} style={{width: '600px'}}>
+        <h1 style={{fontFamily: 'Special Elite, cursive'}}>Contact Us</h1>
+        <FormGroup>
+          <Label for="name" style={{fontFamily: 'Merriweather, serif'}}>Name:</Label>
+            <Input 
+              type="text"
+              name="name"
+              onChange={this.handleChange} 
+              placeholder="enter your name" 
+            />
+        </FormGroup>
+        <FormGroup>
+          <Label for="email" style={{fontFamily: 'Merriweather, serif'}}>Email:</Label>
+            <Input 
+              type="email" 
+              name="email" 
+              onChange={this.handleChange} 
+              placeholder="myemail@here.co" 
+            />
+        </FormGroup>
+        <FormGroup>
+          <Label for="message" style={{fontFamily: 'Merriweather, serif'}}>Message:</Label>
+            <Input 
+              type="textarea" 
+              name="messge" 
+              onChange={this.handleChange}  
+              placeholder="write us a message" />
+        </FormGroup>
+        <Button type="submit" className="btn btn-primary">Submit</Button>
+      </Form>
+      </div>
+   );
+  }
+}
     export default Contact;

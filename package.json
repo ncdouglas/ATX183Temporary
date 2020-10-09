@@ -13,7 +13,10 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.2",
+    "nodemailer": "^6.4.13",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.8.4",
@@ -41,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ncdouglas/ATX183Temporary.git",
+  "author": "Natasha Douglas <ncdouglas2016@gmail.com>",
+  "license": "MIT"
 }
