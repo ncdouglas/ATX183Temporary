@@ -15,28 +15,42 @@
     font-family: 'Merriweather', serif;
     display: flex;
     position: absolute;
-    right: 25%;
+    right: 200px;
 }
 
 .abutton {
     font-family: 'Merriweather', serif;
     display: flex;
     position: absolute;
-    right: 6%;
+    right: 25px;
 }
 
-.image-div { 
-    Display: flex;
-    Height: 100vh;
-    Width: 100vw; 
-    Align-Items: center;
-    Justify-Content: center;
+.card {
+    margin-top: 25px;
 }
 
 .about-div {
     text-align: center;
 }
 
-.form {
-    padding: 10%;
+.formcontainer {
+    position: relative;
+    max-width: 600px;
+    width: 75%;
+    margin: 40px auto;
 }
+
+.formSubmitted {
+    background-color: #ffc107;
+    color: #039da59a;
+    padding: 25px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+   .dbutton, .abutton {display: inline-block; position: relative; right: 0; margin-bottom: 10px;}
+   .abutton {margin-left: 10px;}
+  }

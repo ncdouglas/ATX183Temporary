@@ -10,6 +10,7 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
+      formSubmitted: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,30 +22,41 @@ class Contact extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
   
-  async handleSubmit(e) {
-    e.preventDefault()
+  handleSubmit(e) {
+    
+    e.preventDefault();
 
-    const {name, email, message} = this.state
+    const {name, email, message} = this.state;
 
-    const form = await axios.post('https://mailthis.to/hello@maximizinghope.com', {
+    axios.post('https://submit-form.com/rUNtHtruodFjtjYT4I-aa', {
       name, 
       email,
-      message
+      message,
+    })
+
+    .then( res => {
+     this.setState({name: '', email: '', message: '', formSubmitted : true  })
+     setTimeout(() => {
+      this.setState({...this.state, formSubmitted : false  })
+     }, 3000 )
     })
   }
 
   render() {
     return(
-      <div>
-      <Form onSubmit={this.handleSubmit} style={{width: '600px'}}>
+      <div className="formcontainer">
+        {this.state.formSubmitted ? <div className="formSubmitted">Thanks for contacting us!</div> : null}
+      <Form onSubmit={this.handleSubmit}>
         <h1 style={{fontFamily: 'Special Elite, cursive'}}>Contact Us</h1>
         <FormGroup>
           <Label for="name" style={{fontFamily: 'Merriweather, serif'}}>Name:</Label>
             <Input 
               type="text"
               name="name"
+              value={this.state.name}
               onChange={this.handleChange} 
-              placeholder="enter your name" 
+              placeholder="enter your name"
+              required 
             />
         </FormGroup>
         <FormGroup>
@@ -52,20 +64,26 @@ class Contact extends Component {
             <Input 
               type="email" 
               name="email" 
+              value={this.state.email}
               onChange={this.handleChange} 
               placeholder="myemail@here.co" 
+              required
             />
         </FormGroup>
         <FormGroup>
           <Label for="message" style={{fontFamily: 'Merriweather, serif'}}>Message:</Label>
             <Input 
               type="textarea" 
-              name="messge" 
+              name="message" 
+              value={this.state.message}
               onChange={this.handleChange}  
-              placeholder="write us a message" />
+              placeholder="write us a message" 
+              required
+            />
         </FormGroup>
         <Button type="submit" className="btn btn-primary">Submit</Button>
       </Form>
+  
       </div>
    );
   }
