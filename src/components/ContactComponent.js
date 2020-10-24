@@ -47,9 +47,9 @@ class Contact extends Component {
       <div className="formcontainer">
         {this.state.formSubmitted ? <div className="formSubmitted">Thanks for contacting us!</div> : null}
       <Form onSubmit={this.handleSubmit}>
-        <h1 style={{fontFamily: 'Special Elite, cursive'}}>Contact Us</h1>
+        <h1 style={{fontFamily: 'Comic Neue, cursive'}}>Contact Us</h1>
         <FormGroup>
-          <Label for="name" style={{fontFamily: 'Merriweather, serif'}}>Name:</Label>
+          <Label for="name" style={{fontFamily: 'Comic Neue, cursive'}}>Name:</Label>
             <Input 
               type="text"
               name="name"
@@ -60,7 +60,7 @@ class Contact extends Component {
             />
         </FormGroup>
         <FormGroup>
-          <Label for="email" style={{fontFamily: 'Merriweather, serif'}}>Email:</Label>
+          <Label for="email" style={{fontFamily: 'Comic Neue, cursive'}}>Email:</Label>
             <Input 
               type="email" 
               name="email" 
@@ -71,7 +71,7 @@ class Contact extends Component {
             />
         </FormGroup>
         <FormGroup>
-          <Label for="message" style={{fontFamily: 'Merriweather, serif'}}>Message:</Label>
+          <Label for="message" style={{fontFamily: 'Comic Neue, cursive'}}>Message:</Label>
             <Input 
               type="textarea" 
               name="message" 
@@ -81,7 +81,7 @@ class Contact extends Component {
               required
             />
         </FormGroup>
-        <Button type="submit" className="btn btn-primary">Submit</Button>
+        <Button type="submit" className="sbutton">Submit</Button>
       </Form>
   
       </div>

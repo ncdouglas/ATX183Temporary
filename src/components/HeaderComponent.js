@@ -19,13 +19,13 @@ class Header extends Component {
 
     render() {
         return (
-                <Navbar className="navbar-dark bg-dark" sticky="top" expand="md">
+                <Navbar className="navbar" sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="navbrand">Maximizing Hope</NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src ="/assets/images/logo.jpeg" height="150" width="280" alt="mazimixing Hope logo"/></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}/>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <ButtonToggle className="dbutton" color="warning" outline color="warning">Make a Donation</ButtonToggle>
-                            <ButtonToggle className="abutton" color="warning" outline color="warning">Amazon Wishlist</ButtonToggle>
+                            <ButtonToggle className="dbutton" href='https://givebutter.com/MaxedHope'>Make a Donation</ButtonToggle>
+                            <ButtonToggle className="abutton" href='https://www.amazon.com/hz/wishlist/ls/329W7PRMP2ZIY?ref_=wl_share'>Amazon Wishlist</ButtonToggle>
                         </Collapse>
                     </div>
                 </Navbar>

@@ -6,18 +6,15 @@ class About extends Component {
         return (
             <div className="container">
                 <Card>
-                    <CardImg top width="100%" src="assets/images/background.jpg" alt="placeholder" />
+                    <CardImg src="assets/images/main.jpg" alt="placeholder" />
                     <CardBody>
                         <CardTitle>Welcome!</CardTitle>
                         <CardText>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                            Duis aute irure dolor in reprehenderit in voluptate velit 
-                            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-                            occaecat cupidatat non proident, sunt in culpa qui officia 
-                            deserunt mollit anim id est laborum.
+                        Maximizing Hope works to bridge the gap between people experiencing homelessness and 
+                        social services in Central Texas. We strive for meaningful interactions at each tent.
+                        Our primary focus is the 183N corridor from Pond Springs to Lamar Blvd, Austin. We strive 
+                        to find sustainable solutions for each unique individual around Nutrition, Income Generation, 
+                        Physical Health, and Shelter, as well as assist in obtaining Identification.
                         </CardText>
                     </CardBody>
                 </Card>
