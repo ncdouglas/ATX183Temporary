@@ -19,7 +19,7 @@ class Header extends Component {
 
     render() {
         return (
-                <Navbar className="navbar" sticky="top" expand="md">
+                <Navbar dark className="navbar" sticky="top" expand="md">
                     <div className="container">
                         <NavbarBrand className="mr-auto" href="/"><img src ="/assets/images/logo.jpeg" height="150" width="280" alt="mazimixing Hope logo"/></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}/>
