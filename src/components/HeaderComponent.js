@@ -21,7 +21,7 @@ class Header extends Component {
         return (
                 <Navbar dark className="navbar" sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/"><img src ="/assets/images/logo.jpeg" height="150" width="280" alt="mazimixing Hope logo"/></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src ="/assets/images/logo.png" height="150" width="280" alt="mazimixing Hope logo"/></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav}/>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <ButtonToggle className="dbutton" href='https://givebutter.com/MaxedHope'>Make a Donation</ButtonToggle>
