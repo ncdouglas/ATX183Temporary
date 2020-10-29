@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Card, Button } from 'reactstrap';
+
 import Header from './components/HeaderComponent';
 import About from './components/AboutComponent';
 import Contact from './components/ContactComponent';
